@@ -26,44 +26,39 @@
         
         // Adding/Removing feedback innerHTML text
         feedback.innerHTML = "";
-        if (bill.value === "") {
+        if (bill.value == "") {
             feedback.innerHTML = "<p>Bill Amount Cannot Be Blank</p>";
             feedback.classList.add("showItem");
-        } else {
-            feedback.innerHTML = "";
-            feedback.classList.remove("showItem");
-        }
+        } 
         if (users.value == "" || users.value <= 0) {
             feedback.innerHTML += "<p>Number Of Users Must Be Greater Than Zero</p>";
             feedback.classList.add("showItem");
-        } else  {
-            feedback.innerHTML = "";
-            feedback.classList.remove("showItem");
         }
         if (inputService.value == 0) {
             feedback.innerHTML += "<p>You Must Select A Service</p>";
             feedback.classList.add("showItem");
-        } else {
-            feedback.innerHTML = "";
-            feedback.classList.remove("showItem");
         }
         
         // runs if bill.value, users.value are true and inputService.value is any other value in the select field
         if ( bill.value && users.value && !(inputService.value == 0) ) {
-            const tip = serviceRating * bill.value;
+            let tip, total, person;
+
+            feedback.classList.remove("showItem");
+
+            tip = serviceRating * bill.value;
             tipAmount.textContent = tip.toFixed(2);
             
-            const total = Number(tipAmount.textContent) + Number(bill.value);
+            total = Number(tipAmount.textContent) + Number(bill.value);
             totalAmount.textContent = total.toFixed(2);
             
-            const person = totalAmount.textContent / users.value;
+            person = totalAmount.textContent / users.value;
             personAmount.textContent = person.toFixed(2);
             
             loader.classList.add("showItem");
             setTimeout(function() {
                 loader.classList.remove("showItem");
             }, 1500);
-
+            
             results.classList.remove("showItem");
             setTimeout(function() {
                 results.classList.add("showItem");
