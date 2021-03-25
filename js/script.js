@@ -9,7 +9,7 @@
     inputService.innerHTML += "<option value='20'>Great - 20%</option><option value='10'>Good - 10%</option><option value='2'>Bad - 2%</option>";
     
     // select input event listener
-    inputService.addEventListener("input", function(e) {
+    inputService.addEventListener("change", function(e) {
         serviceRating = e.target.value / 100;
     });
     
