@@ -5,6 +5,7 @@
     <li><a href="#about-the-project">About The Project</a>
       <ol>
         <li><a href="#challenge">Challenge</a>
+        <li><a href="#solution">Solution</a>
       </ol>
     </li>
     <li><a href="#contact">Contact</a></li>
@@ -19,7 +20,10 @@
 [![Product Name Screen Shot][product-screenshot]](https://slimake.github.io/tip-form/)
 
 ## Challenge
-None
+The "input" event worked on pc, but acted weird on mobile.
+
+## Solution
+I decided to google search on event listener that's compatible for <select> elements, i found out about "change" event. it's similar to "input" event, but with minor differences, such as it activate when an element loses focus after the content has been changed and it works for <select> elements.
 
 
 <!-- CONTACT -->

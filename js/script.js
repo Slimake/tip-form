@@ -10,6 +10,7 @@
     
     // select input event listener
     inputService.addEventListener("change", function(e) {
+        console.log(e.target.value);
         serviceRating = e.target.value / 100;
     });
     
